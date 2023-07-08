@@ -1,0 +1,167 @@
+** graphql
+GraphQL is a query language and runtime that allows clients to request and receive specific data from a server. It provides a flexible and efficient approach to data fetching and manipulation. SDL (Schema Definition Language) is a way to define the structure and capabilities of a GraphQL API.
+
+**schemas
+In GraphQL, the schema defines the types of data that can be queried and the relationships between them. It serves as a contract between the client and the server, specifying what data can be requested and how it can be manipulated. The SDL is used to define this schema using a declarative syntax.
+
+**types of schemas
+A schema in GraphQL consists of two main types: Query and Mutation. 
+	The Query type defines the read operations that can be performed, allowing clients to fetch data. 
+	The Mutation type defines the write operations, enabling clients to modify data.
+
+**endpoints
+Endpoints or entry points in GraphQL refer to the URLs or routes that clients use to send GraphQL queries or mutations to the server. Each endpoint typically represents a specific GraphQL API that the client can interact with.
+
+**strawberry
+Strawberry is a Python library that simplifies working with GraphQL. It allows developers to define GraphQL schemas using Python classes and provides tools for automatically generating the SDL schema, resolvers, and GraphQL execution logic. Strawberry aims to provide a straightforward and Pythonic approach to GraphQL development.
+
+*****
+ access design patterns, there are several commonly used approaches that help in structuring and organizing data access operations. Some of the popular data access design patterns include:
+
+Repository Pattern: The repository pattern abstracts the underlying data storage and provides a simplified interface for performing CRUD (Create, Read, Update, Delete) operations on data. It separates the business logic from the data access logic and provides a consistent and standardized way to access and manipulate data.
+
+Data Access Object (DAO) Pattern: The DAO pattern provides an interface between the application and the data persistence layer. It encapsulates the logic for accessing and manipulating data, shielding the rest of the application from the underlying data storage implementation details.
+
+Unit of Work Pattern: The Unit of Work pattern manages the transactional boundaries and ensures that a group of related data operations is treated as a single atomic unit. It helps to maintain data consistency and integrity by enabling multiple data operations to be committed or rolled back together.
+
+Query Object Pattern: The Query Object pattern separates the construction and execution of queries from the business logic. It encapsulates the query details, such as filters, sorting, and projections, into reusable query objects, allowing for more flexible and maintainable querying capabilities.
+
+Active Record Pattern: The Active Record pattern combines data access logic and domain logic into a single class. Each instance of the class represents a record in the database, and it contains methods for performing CRUD operations on that record. This pattern is commonly used in Object-Relational Mapping (ORM) frameworks.
+
+These patterns provide guidelines and best practices for designing data access layers in applications, promoting separation of concerns, code reusability, and maintainability. The choice of pattern depends on the specific requirements and complexity of the application.
+****
+
+****
+ "schema types" typically refer to the types defined within a schema definition language (SDL) or a schema in a specific technology or framework. Here are some commonly used schema types in different contexts:
+
+GraphQL Schema Types: In GraphQL, schema types define the structure of the data that can be queried or mutated. The most common schema types in GraphQL are:
+
+Scalar Types: Basic built-in types such as String, Int, Float, Boolean, and ID.
+Object Types: User-defined types representing objects with fields that can be queried.
+Input Types: Types used for passing arguments in mutations.
+Enum Types: Enumeration types with predefined values.
+Interface Types: Abstract types that define a set of fields that other types can implement.
+Union Types: Types that represent a value that can be one of several possible types.
+Database Schema Types: In the context of databases, schema types refer to the types of data that can be stored in database tables or collections. These types depend on the specific database management system being used, such as:
+
+String: Textual data.
+Integer: Whole numbers.
+Float: Decimal numbers.
+Boolean: True or false values.
+Date/Time: Types to represent dates, times, or timestamps.
+Other specialized types: Geospatial types, JSON types, binary types, etc.
+XML Schema Types: XML schemas define the structure and rules for XML documents. XML schema types specify the data types that elements and attributes can have. Common XML schema types include:
+
+String: Character data.
+Integer: Whole numbers.
+Decimal: Decimal numbers.
+Boolean: True or false values.
+Date/Time: Types to represent dates, times, or timestamps.
+Other specialized types: HexBinary, Base64Binary, etc.
+*****
+
+******
+the exclamation mark (!) is used to indicate a non-null type in GraphQL schema definitions. Strawberry is a GraphQL library for Python that simplifies the process of building GraphQL APIs.
+
+In GraphQL, a field can have a type modifier to indicate whether it can be nullable or non-null. By default, fields are nullable, meaning they can return null values. However, when an exclamation mark is added to a type, it signifies that the field is non-null, and it must always return a valid value.
+*******
+
+***********
+In Strawberry, a GraphQL library for Python, there are several methods and parameters available for defining schema types and fields. Here is an overview of some commonly used methods and parameters in Strawberry:
+
+Methods:
+
+@strawberry.type: Decorator to define a class as a GraphQL schema type.
+@strawberry.field: Decorator to define a method as a GraphQL field within a schema type.
+@strawberry.mutation: Decorator to define a method as a GraphQL mutation within a schema type.
+@strawberry.subscription: Decorator to define a method as a GraphQL subscription within a schema type.
+@strawberry.lazy_type: Decorator to define a type lazily, allowing for circular references in the schema.
+Parameters:
+
+name: The name parameter specifies the name of the field in the GraphQL schema. It can be different from the Python method or attribute name.
+description: The description parameter provides a description or documentation for the field.
+deprecation_reason: The deprecation_reason parameter allows marking a field as deprecated and providing an explanation for deprecation.
+is_subscription: The is_subscription parameter indicates whether a field is a subscription.
+resolver: The resolver parameter allows specifying a custom resolver function for a field.
+permission_classes: The permission_classes parameter specifies the permission classes that control the access to a field or mutation.
+extensions: The extensions parameter allows attaching additional metadata or custom extensions to a field.
+These are some of the commonly used methods and parameters in Strawberry. The library provides various other options and features to customize and define GraphQL schema types and fields, allowing for flexible and powerful GraphQL API development in Python.
+********
+
+
+Schema: In GraphQL, a schema is a collection of types that define the capabilities and structure of the API. It includes object types, input types, enums, scalars, interfaces, unions, queries, mutations, and subscriptions.
+
+Directives: Directives are used in GraphQL to annotate and modify the execution of fields or fragments. They provide additional instructions to the server or client to alter how data is queried or processed.
+
+Schema Directives: Schema directives in GraphQL allow you to add custom logic or behavior to the schema itself. They can modify the execution or validation process of queries, mutations, or subscriptions.
+
+Schema Configuration: In Strawberry, schema configuration refers to the process of defining the structure and behavior of the GraphQL schema using decorators and other configuration options provided by the library.
+
+Scalars: Scalars represent primitive data types in GraphQL. Examples of scalars include String, Int, Float, Boolean, and ID. Scalars can also be custom-defined to represent specific types in the schema.
+
+Object Types: Object types in GraphQL represent complex, structured data types. They consist of fields that can be queried or mutated. Object types are used to model entities or concepts in the domain.
+
+Interface: An interface defines a contract that other object types can implement. It specifies a set of fields that the implementing types must include. Interfaces allow for polymorphism and sharing of common fields and behavior between object types.
+
+Input Types: Input types in GraphQL are used to represent data that is passed as arguments to mutations or queries. They are similar to object types but are focused on accepting input data rather than being queried.
+
+Enums: Enums in GraphQL define a set of possible values for a field. They represent a closed set of options or categories that a field can have.
+
+Generic: In Strawberry, generics refer to the ability to define schema types or fields with type parameters. This allows for creating reusable and flexible schema components that can work with different data types.
+
+Resolvers: Resolvers are functions or methods that are responsible for resolving the values of fields in the schema. They define how data is fetched or computed for a specific field.
+
+Union Types: Union types allow combining multiple object types into a single type. Union types represent a value that can be one of several possible object types.
+
+Lazy Types: Lazy types in Strawberry allow for resolving circular references in the schema. They enable the creation of types that reference each other without causing circular import errors.
+
+Exceptions: Exceptions in Strawberry are used to handle and propagate errors within the GraphQL API. They allow for customizing the error handling behavior and providing meaningful error messages to clients.
+
+*******
+-- .gaphql file---
+
+GraphQL files with the .graphql extension are commonly used to define GraphQL schemas, queries, mutations, subscriptions, and other GraphQL-related artifacts. These files contain GraphQL syntax and are used by GraphQL tools and libraries for various purposes. Here are some common uses of .graphql files:
+
+Schema Definition: .graphql files can be used to define the GraphQL schema, which includes object types, input types, enums, scalars, interfaces, unions, queries, mutations, and subscriptions. The schema definition describes the structure and capabilities of the GraphQL API.
+
+Queries and Mutations: GraphQL queries and mutations can be written in .graphql files. These files contain the GraphQL operations that fetch or modify data from the API. They can include variables, fragments, and other GraphQL syntax elements.
+
+Fragments: Fragments are reusable selections of fields in GraphQL. .graphql files can define fragments that can be included in queries, mutations, or other fragments. This promotes code reuse and reduces duplication.
+
+Mocking and Testing: .graphql files can be used for mocking and testing GraphQL APIs. They can define mock responses or test cases for specific queries, mutations, or subscriptions. Testing frameworks or GraphQL-specific tools can utilize these files to simulate API behavior or validate responses.
+
+Documentation: .graphql files can be used to document the GraphQL API. They can include descriptions, examples, and explanations of the available types, fields, and operations. Documentation tools can extract this information from the files to generate API documentation.
+
+Code Generation: .graphql files are often used by code generation tools to generate code that interacts with the GraphQL API. These tools analyze the schema and operations defined in the files and generate client-side code, server-side code, or other utility code to facilitate API consumption or development.
+
+Using .graphql files for defining and working with GraphQL artifacts provides benefits such as improved organization, reusability, and tooling support. It helps separate the GraphQL-specific code from the rest of the application code and enables better collaboration between frontend and backend developers working on the same GraphQL API.
+
+********************
+
+******
+---SDL---
+
+SDL stands for Schema Definition Language. It is a human-readable syntax used to define the schema of a GraphQL API. SDL provides a way to describe the structure and capabilities of the API, including object types, fields, queries, mutations, subscriptions, interfaces, unions, input types, and scalars.
+
+SDL is designed to be easy to read and write, making it a convenient way to communicate and document the schema of a GraphQL API. It serves as a common language for developers, client applications, and API consumers to understand and interact with the GraphQL API.
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Query {
+  getUser(id: ID!): User
+}
+
+type Mutation {
+  createUser(name: String!, email: String!): User
+  updateUser(id: ID!, name: String, email: String): User
+  deleteUser(id: ID!): Boolean
+}
+*********************************
+
+
+
+

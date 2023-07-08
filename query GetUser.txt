@@ -1,0 +1,19 @@
+query GetUser {
+  user{
+    userId
+    username
+    userEmail
+    age
+    address {
+      street
+      city
+      state
+      country
+    }
+  }
+}
+{
+   variable:{
+	    userid:1
+  }
+}

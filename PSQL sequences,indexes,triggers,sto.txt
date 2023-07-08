@@ -1,0 +1,27 @@
+PSQL sequences,indexes,triggers,store procedure
+
+
+**Sequences:
+Sequences in PostgreSQL are used to generate unique numerical values automatically. They are often used for generating primary key values for tables. A sequence is an independent database object that can be referenced by multiple tables. You can create a sequence using the CREATE SEQUENCE statement and retrieve the next value from a sequence using the NEXTVAL function.
+
+**Indexes:
+Indexes are database structures that improve the retrieval speed of data from tables. They are created on one or more columns of a table and allow the database to locate rows quickly. Indexes are particularly useful when querying large amounts of data. PostgreSQL supports different types of indexes, such as B-tree, Hash, GiST, SP-GiST, GIN, and BRIN. You can create indexes using the CREATE INDEX statement.
+
+**Stored Procedures:
+Stored procedures are precompiled database routines that encapsulate a set of SQL statements. They are stored in the database and can be executed multiple times with different parameters. Stored procedures help in modularizing database logic, enhancing security, and improving performance by reducing network traffic. In PostgreSQL, you can create stored procedures using the CREATE PROCEDURE or CREATE FUNCTION statements.
+
+**Triggers:
+Triggers are database objects that are associated with a table and automatically executed in response to specific events, such as insertions, updates, or deletions of data. Triggers enable you to define custom actions or validations that are automatically triggered when certain conditions are met. You can create triggers using the CREATE TRIGGER statement.
+
+**VIEWS
+ a view is a virtual table that is derived from one or more tables or other views. It does not store any data itself but rather provides a way to present the data stored in the underlying tables in a customized or filtered manner.
+
+Views offer several advantages:
+
+Simplified data access: Views can simplify complex queries by providing a predefined, abstracted representation of data. They can join multiple tables together and present a unified view to the user, hiding the underlying complexity.
+
+Security and access control: Views allow you to define access control at a granular level. You can restrict users' access to certain columns or rows of data by granting permissions only on the view and not the underlying tables.
+
+Data abstraction and encapsulation: Views provide a level of abstraction by encapsulating complex queries, calculations, or data transformations. This abstraction shields the user or application from the underlying database structure changes.
+
+Performance optimization: Views can be used to pre-compute complex queries or aggregate data, improving the performance of frequently executed queries. Materialized views, a specific type of view, store the computed results, reducing the need to recompute them on each query execution.

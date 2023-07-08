@@ -1,0 +1,78 @@
+flask-qc
+*****
+1.  why do we use Flask(_name_) in Flask?
+2. What is routing in Flask?
+3. What is Flask?What are the features of Flask Python?
+4.  What does url_for do in Flask?
+5. What HTTP methods does Python Flask provide?
+6. What is the use of jsonify() in Flask?
+7.  Explain how one can one-request database connections in Flask?
+8. Mention how one can enable debugging in Flask Python?
+9. How to create a RESTful application in Flask?
+10. Which extension is used to connect to a database in Flask?
+11. What is Flask-SQLAlchemy?
+*******
+
+**********
+
+
+1)	In Flask, __name__ is a special variable that represents the name of the current Python module. When we use Flask(__name__), it helps Flask determine the root path of the application. This is important because Flask uses this root path to locate resources like templates, static files, and more.
+
+2)	Routing in Flask refers to the process of mapping URLs (Uniform Resource Locators) to specific functions or views in your Flask application. It allows you to define different routes for different parts of your application and associate them with the appropriate functions. When a user requests a particular URL, Flask's routing mechanism ensures that the corresponding function is executed to handle that request.
+
+(3)
+Flask is a lightweight web framework written in Python. It provides a simple and flexible way to build web applications. 
+
+Some features of Flask include:
+Routing: Flask allows you to define routes for different parts of your application and associate them with functions or views.
+Templating: Flask supports Jinja2 templating, which allows you to separate the presentation logic from your Python code.
+Web Server Gateway Interface (WSGI) compatibility: Flask is compatible with WSGI servers, making it easy to deploy your application to various hosting platforms.
+Built-in development server: Flask provides a built-in development server, which is convenient for testing and development.
+Flask extensions: Flask has a rich ecosystem of extensions that add additional functionality, such as database integration, form handling, user authentication, and more.
+
+(4)
+In Flask, url_for is a function that is used to generate URLs for a given endpoint (a specific view or function) in your application. Instead of hard-coding URLs in your templates or code, you can use url_for to dynamically generate URLs based on the endpoint's name and any associated arguments. This helps maintain consistency and flexibility in your application.
+
+(5)
+Python Flask provides support for the following HTTP methods:
+
+GET: Used to retrieve a resource or retrieve data.
+POST: Used to submit data to be processed by a specified resource.
+PUT: Used to update a resource with new data.
+DELETE: Used to delete a specified resource.
+PATCH: Used to partially update a resource.
+OPTIONS: Used to retrieve the supported HTTP methods of a resource.
+HEAD: Similar to GET but only retrieves the headers of a resource.
+
+(6)
+The jsonify() function in Flask is used to convert a Python object (usually a dictionary or a list) into a JSON response. It serializes the object into JSON format and sets the appropriate Content-Type header in the HTTP response. It is commonly used when you want to return JSON data from a Flask route or API endpoint.
+
+(7)
+In Flask, to establish one-request database connections, you can use the Flask-SQLAlchemy extension. SQLAlchemy is a popular SQL toolkit and Object-Relational Mapping (ORM) library for Python, and Flask-SQLAlchemy provides integration between SQLAlchemy and Flask.
+
+By using Flask-SQLAlchemy, you can define database models as classes and easily perform database operations within Flask routes. Each request will have its own separate database session, and the connection to the database will be automatically handled by Flask-SQLAlchemy.
+
+To enable debugging in Flask, you can set the debug flag to True in your Flask application. This can be done by adding the following line before running the application:
+
+app.debug = True
+
+Enabling debugging mode allows you to get detailed error messages and stack traces in the browser when an exception occurs. It helps in identifying and fixing issues during development. However, it's important to disable debugging in production environments for security reasons.
+
+To create a RESTful application in Flask, you can follow these general steps:
+Define your Flask application and import the necessary modules.
+Define routes for different HTTP methods (GET, POST, PUT, DELETE) that correspond to different resources or actions in your application.
+Implement the logic for each route, such as retrieving or manipulating data, and returning appropriate responses.
+Use Flask's request object to access the request data, headers, and parameters.
+Return JSON responses using the jsonify() function or other methods for serialization.
+Test your RESTful endpoints using tools like cURL, Postman, or automated tests.
+Flask provides various extensions for connecting to databases, and the choice of extension depends on the database you want to connect to. Some popular Flask extensions for database connectivity include:
+Flask-SQLAlchemy: Provides integration with SQLAlchemy, allowing you to work with relational databases using ORM.
+Flask-MongoEngine: Offers integration with MongoDB, providing an ORM-like interface for MongoDB documents.
+Flask-PyMongo: Enables connectivity with MongoDB using the PyMongo library.
+Flask-MySQL: Allows you to connect to MySQL databases and execute queries using Flask.
+Flask-SQLite: Provides support for SQLite databases within Flask applications.
+Flask-SQLAlchemy is a Flask extension that integrates the SQLAlchemy ORM with Flask. It simplifies database operations by providing an easy-to-use interface for working with databases in Flask applications.
+SQLAlchemy is a powerful and popular SQL toolkit and ORM library for Python. It abstracts the database layer, allowing you to work with databases using Python objects and SQL expressions. Flask-SQLAlchemy builds upon SQLAlchemy, providing additional features specifically tailored for Flask applications.
+
+With Flask-SQLAlchemy, you can define database models as Python classes, define relationships between models, perform database queries and operations, and more. It handles database connections, transactions, and migrations, making it easier to work with databases in Flask.
+***************
